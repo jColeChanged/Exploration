@@ -8,15 +8,20 @@
 #include <cstdio>
 
 #include "functors/higher_order.h"
+#include "sorting/quick_sort.h"
 
-void RunFunctors(void);
+// void RunFunctors(void);
+void RunQuickSort(void);
+
+void PrintArray(int * array, int end);
 
 int main(void)
 {
-  RunFunctors();
+  RunQuickSort();
   return 0;
 }
 
+/*
 void RunFunctors(void)
 {
   printf("The functors folder implements multiple methods of creating and \n"
@@ -27,4 +32,23 @@ void RunFunctors(void)
   MultiplyFunctor multiplyFunctor;
   printf("AnotherHigherOrderPower(&multiplyFunctor, 2.0, 3) = %.1f\n",
          AnotherHigherOrderPower(&multiplyFunctor, 2.0, 3));
+}
+*/
+
+void RunQuickSort(void)
+{
+  int to_partition[] = {2, 1, 3, 7, 1, 3, 6, 4, 8, 3, 4, 1};
+  int size = sizeof(to_partition) / sizeof(int);
+  PrintArray(to_partition, size);
+  Quicksort(to_partition, 0, size);
+  PrintArray(to_partition, size);
+}
+
+void PrintArray(int * array, int end)
+{
+  for (int i = 0; i < end; i++)
+  {
+    printf("%d, ", array[i]);
+  }
+  printf("\n");
 }

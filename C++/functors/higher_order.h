@@ -2,6 +2,8 @@
 // MIT License
 // Joshua Cole
 
+#ifndef HIHGER_ORDER_H
+#define HIGHER_ORDER_H
 // Examples of higher order functions in C++.
 
 // Returns the power of a raised to b. If b is below zero the function returns
@@ -45,3 +47,5 @@ public:
 // Accepts a derivation of the MultiplicationFunctor abstract base class.
 // In cases where b is below zero the function will return -1.
 double AnotherHigherOrderPower(MultiplicationFunctor * f, double a, int b);
+
+#endif
